@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code Image Generation with GPT Image 2 (No API Key) — Free Skill</title>
+<meta name="description" content="Can Claude generate images? With this free Claude Code skill, yes: generate and edit images with GPT Image 2 (gpt-image-2) through Codex CLI on your ChatGPT subscription. No OpenAI API key. One-line install.">
+<link rel="canonical" href="https://mishagavura.github.io/claude-code-image-generation/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claude Code Image Generation with GPT Image 2">
+<meta property="og:description" content="Free Claude Code skill: generate and edit images with GPT Image 2 on your ChatGPT subscription. No API key.">
+<meta property="og:url" content="https://mishagavura.github.io/claude-code-image-generation/">
+<meta property="og:image" content="https://mishagavura.github.io/claude-code-image-generation/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Code Image Generation with GPT Image 2">
+<meta name="twitter:description" content="Free Claude Code skill: GPT Image 2 on your ChatGPT subscription. No API key.">
+<meta name="twitter:image" content="https://mishagavura.github.io/claude-code-image-generation/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Claude Code Image Generation (codex-image skill)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS, Linux",
+      "description": "Claude Code skill that generates and edits images with GPT Image 2 through the Codex CLI on a ChatGPT subscription, without an OpenAI API key.",
+      "url": "https://mishagavura.github.io/claude-code-image-generation/",
+      "downloadUrl": "https://github.com/mishagavura/claude-code-image-generation",
+      "license": "https://opensource.org/licenses/MIT",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Mykhailo Gavura", "url": "https://github.com/mishagavura" },
+      "publisher": { "@type": "Organization", "name": "EVDEV", "url": "https://evdev.dev" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can Claude generate images?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not natively. Claude can read images but not create them. This Claude Code skill adds image generation by calling GPT Image 2 through the Codex CLI." } },
+        { "@type": "Question", "name": "Do I need an OpenAI API key for GPT Image 2?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The skill uses the Codex CLI signed in with your ChatGPT account, so images count against your ChatGPT plan instead of pay-as-you-go API billing." } },
+        { "@type": "Question", "name": "Is GPT Image 2 free with this skill?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There is no extra cost beyond your ChatGPT subscription, but generations count toward your plan's usage limits." } },
+        { "@type": "Question", "name": "How do I install skills in Claude Code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Skills are folders with a SKILL.md file in ~/.claude/skills (all projects) or .claude/skills (one project). Run the one-line installer or add it as a Claude Code plugin with /plugin." } }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root { --bg:#fbf9f6; --fg:#1d1b22; --muted:#5f5b6b; --card:#fff; --line:#e7e3ee; --accent:#6d4fe0; --code:#17151c; --codefg:#ece8f5; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121117; --fg:#eeebf5; --muted:#a39fb2; --card:#1b1a22; --line:#2b2935; --accent:#9d86ff; --code:#0b0a0f; } }
+  * { box-sizing:border-box } body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
+  main { max-width:920px; margin:0 auto; padding:56px 20px 40px; }
+  h1 { font-size:clamp(2rem,5vw,3.1rem); line-height:1.1; margin:0 0 16px; letter-spacing:-.02em }
+  h2 { font-size:1.5rem; margin:56px 0 12px; letter-spacing:-.01em } h3 { font-size:1.1rem; margin:24px 0 4px }
+  p.lead { font-size:1.2rem; color:var(--muted); max-width:720px }
+  a { color:var(--accent) }
+  pre { background:var(--code); color:var(--codefg); padding:16px 18px; border-radius:12px; overflow-x:auto; font:14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; position:relative }
+  code { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9em }
+  .copy { position:absolute; top:10px; right:10px; background:#2d2a36; color:#fff; border:0; border-radius:8px; padding:6px 10px; font-size:12px; cursor:pointer }
+  .hero-img { width:100%; border-radius:16px; border:1px solid var(--line); margin:24px 0 }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px }
+  figure { margin:0; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden }
+  figure img { width:100%; display:block; aspect-ratio:1/1; object-fit:cover } figcaption { padding:10px 14px; font-size:14px; color:var(--muted) }
+  .steps { counter-reset:s; padding:0; list-style:none } .steps li { counter-increment:s; margin:0 0 18px; padding-left:44px; position:relative }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:0; width:30px; height:30px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-weight:700; font-size:15px }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:12px 20px; border-radius:10px; font-weight:600; margin:8px 8px 0 0 }
+  .btn.ghost { background:transparent; color:var(--fg); border:1px solid var(--line) }
+  footer { border-top:1px solid var(--line); margin-top:64px; padding-top:20px; color:var(--muted); font-size:14px }
+  @media (max-width:600px) { main { padding-top:32px } body { font-size:16px } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Claude Code image generation with GPT Image 2</h1>
+  <p class="lead">A free, open-source Claude Code skill that lets Claude generate and edit images with OpenAI's GPT Image 2, using your ChatGPT subscription through the Codex CLI. You don't need an API key.</p>
+  <a class="btn" href="https://github.com/mishagavura/claude-code-image-generation">View on GitHub</a>
+  <a class="btn ghost" href="#install">Install in 1 minute</a>
+  <img class="hero-img" src="og.png" alt="Claude Code image generation with GPT Image 2 — no API key" width="1280" height="640">
+
+  <h2>Can Claude generate images?</h2>
+  <p>Not on its own. Claude can read images, but it can't create them. With this skill installed, you ask Claude Code for an image and it writes the prompt, runs GPT Image 2 (<code>gpt-image-2</code>) through the Codex CLI, checks the result, and saves the file into your project.</p>
+  <div class="grid">
+    <figure><img src="leaf.jpg" alt="GPT Image 2 flat illustration of an oak leaf generated from Claude Code" loading="lazy"><figcaption>“Flat illustration of a green oak leaf on a cream background”</figcaption></figure>
+    <figure><img src="leaf-autumn.jpg" alt="Image edited with GPT Image 2 from Claude Code: leaf turned autumn red" loading="lazy"><figcaption>Edit: “make the leaf autumn orange-red, keep everything else”</figcaption></figure>
+    <figure><img src="var-1.jpg" alt="GPT Image 2 watercolor of a plant nursery stall generated in Claude Code" loading="lazy"><figcaption>“Cozy watercolor of a plant nursery stall at a spring market”</figcaption></figure>
+  </div>
+
+  <h2 id="install">How to install the skill in Claude Code</h2>
+  <ol class="steps">
+    <li><strong>Run the installer once.</strong> It installs globally for every project (<code>~/.claude/skills</code>), installs the Codex CLI if needed, and signs you in with ChatGPT.
+      <pre><button class="copy">Copy</button>curl -fsSL https://raw.githubusercontent.com/mishagavura/claude-code-image-generation/main/install.sh | bash</pre>
+      Prefer something else? <code>npx -y github:mishagavura/claude-code-image-generation</code>, or in Claude Code: <code>/plugin marketplace add mishagavura/claude-code-image-generation</code>. For one project only, add <code>| bash -s -- --project</code>.</li>
+    <li><strong>Restart Claude Code.</strong></li>
+    <li><strong>Ask for an image.</strong>
+      <pre><button class="copy">Copy</button>Generate a product photo of a ceramic mug on a light wood table</pre></li>
+  </ol>
+
+  <h2>What you can make</h2>
+  <p>Website hero images, product photos, illustrations, ad creatives, UI mockups, transparent stickers and icons, and up to 4 variants at once. You can also edit existing images (lighting, colors, removing objects) or match the style of a reference image.</p>
+
+  <h2>FAQ</h2>
+  <h3>Do I need an OpenAI API key for GPT Image 2?</h3>
+  <p>No. The Codex CLI signs in with your ChatGPT account, so images count against your ChatGPT plan instead of API billing.</p>
+  <h3>Is GPT Image 2 free with this?</h3>
+  <p>There's no extra cost beyond your ChatGPT subscription, but generations count toward your plan's usage limits.</p>
+  <h3>How do I install skills in Claude Code?</h3>
+  <p>A skill is a folder with a <code>SKILL.md</code> file in <code>~/.claude/skills/</code> (all projects) or <code>.claude/skills/</code> (one project). The installer above handles it, or use <code>/plugin</code> in Claude Code.</p>
+  <h3>Does it work in claude.ai or Claude Desktop chat?</h3>
+  <p>It's built for Claude Code (terminal, desktop app, IDE extensions), which can run local commands. The web chat can't run the Codex CLI.</p>
+
+  <footer>
+    Open source (MIT) by <a href="https://github.com/mishagavura">Mykhailo Gavura</a> · Built at <a href="https://evdev.dev">EVDEV</a>, a Shopify &amp; AI development studio.<br>
+    Not affiliated with OpenAI or Anthropic.
+  </footer>
+</main>
+<script>
+  document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
+    const t = b.parentElement.textContent.replace(/^Copy/, '').trim();
+    navigator.clipboard?.writeText(t).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); });
+  }));
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "claude-code-image-generation",
+  "version": "1.0.0",
+  "description": "Claude Code image generation skill: generate and edit images with GPT Image 2 (gpt-image-2) from Claude Code via Codex CLI on your ChatGPT subscription. No OpenAI API key.",
+  "bin": { "claude-code-image-generation": "install.sh" },
+  "files": ["install.sh", "skills/"],
+  "keywords": ["claude-code", "claude-skills", "claude-code-skills", "gpt-image-2", "gpt-image", "image-generation", "codex", "codex-cli", "openai", "anthropic", "text-to-image"],
+  "author": "Mykhailo Gavura (https://github.com/mishagavura)",
+  "license": "MIT",
+  "homepage": "https://mishagavura.github.io/claude-code-image-generation/",
+  "repository": { "type": "git", "url": "git+https://github.com/mishagavura/claude-code-image-generation.git" }
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # codex-image — generate images with GPT Image 2 via Codex CLI (ChatGPT subscription, no API key).
-# https://github.com/mishagavura/codex-image-skill · MIT
+# https://github.com/mishagavura/claude-code-image-generation · MIT
 #
 # Usage:
 #   gen.sh -o OUT.png [-n N] [-r REF.png]... [-e EDIT.png] [-t] [-a ASPECT] "prompt"

@@ -1,17 +1,12 @@
 {
-  "name": "codex-image-skill",
-  "owner": {
-    "name": "Mykhailo Gavura",
-    "url": "https://github.com/mishagavura"
-  },
-  "metadata": {
-    "description": "GPT Image 2 image generation for Claude Code via Codex CLI on your ChatGPT subscription."
-  },
+  "name": "claude-code-image-generation",
+  "owner": { "name": "Mykhailo Gavura", "url": "https://github.com/mishagavura" },
+  "metadata": { "description": "Claude Code image generation: GPT Image 2 via Codex CLI on your ChatGPT subscription." },
   "plugins": [
     {
       "name": "codex-image",
       "source": "./",
-      "description": "Generate and edit images with GPT Image 2 via Codex CLI on your ChatGPT subscription. No API key."
+      "description": "Generate and edit images with GPT Image 2 from Claude Code. No OpenAI API key."
     }
   ]
 }
