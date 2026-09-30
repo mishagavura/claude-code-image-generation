@@ -1,5 +1,7 @@
 # Claude Code Image Generation with GPT Image 2
 
+[![GitHub stars](https://img.shields.io/github/stars/mishagavura/claude-code-image-generation?style=social)](https://github.com/mishagavura/claude-code-image-generation/stargazers) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Website](https://img.shields.io/badge/website-live-e0683f)](https://mishagavura.github.io/claude-code-image-generation/)
+
 **Give Claude Code the ability to generate and edit images.** This free, open-source Claude Code skill connects Claude to
 OpenAI's **GPT Image 2** (`gpt-image-2`) through the Codex CLI, using your **ChatGPT subscription**. You don't need an
 OpenAI API key or pay-per-image credits.
@@ -24,6 +26,13 @@ project needs it.
 |---|---|---|
 | ![AI generated oak leaf illustration](examples/leaf.jpg) | ![Image edited with GPT Image 2](examples/leaf-autumn.jpg) | ![GPT Image 2 watercolor example](examples/var-1.jpg) |
 | *"flat illustration of a green oak leaf on a cream background"* | *"make the leaf autumn orange-red, keep everything else"* | *"cozy watercolor of a plant nursery stall at a spring market"* |
+
+More examples, each generated from a one-line prompt (see them all on the [website](https://mishagavura.github.io/claude-code-image-generation/#gallery)):
+
+| | | |
+|---|---|---|
+| ![Rainy Tokyo street generated with GPT Image 2](docs/tokyo.jpg) | ![Vintage Vancouver travel poster generated in Claude Code](docs/poster.jpg) | ![Isometric developer desk illustration made with GPT Image 2](docs/desk.jpg) |
+| ![Sourdough food photo generated with GPT Image 2](docs/bread.jpg) | ![Coffee brand hero banner with accurate text](docs/coffee-hero.jpg) | ![Product photo of a ceramic mug from Claude Code](docs/mug.jpg) |
 
 **What you can do:**
 - Text-to-image: photos, illustrations, product shots, website hero images, mockups, ad creatives
@@ -178,7 +187,9 @@ remove it with another tool.
 
 ## Contributing
 
-Issues and pull requests are welcome. If this saved you some time, a ⭐ helps other people find it.
+Issues and pull requests are welcome.
+
+**If this saved you an API bill, please [⭐ star the repo](https://github.com/mishagavura/claude-code-image-generation).** It takes one click and helps other Claude Code users find it.
 
 *Not affiliated with OpenAI or Anthropic. This project only drives the official Codex CLI that you install and sign in to
 yourself. OpenAI's usage policies apply to generated images.*
